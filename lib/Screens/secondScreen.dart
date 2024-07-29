@@ -9,11 +9,6 @@ class SecondScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 60,
-          backgroundColor: const Color.fromRGBO(38, 77, 102, 1),
-          title: UiHelper.timing_row(),
-        ),
         body: Stack(
           children: [
             Container(

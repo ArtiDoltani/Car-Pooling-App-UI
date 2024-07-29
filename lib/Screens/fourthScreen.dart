@@ -7,96 +7,93 @@ class FourthScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        toolbarHeight: 60,
-        backgroundColor: const Color.fromRGBO(38, 77, 102, 1),
-        title: UiHelper.timing_row(),
-      ),
-      body: Stack(
-        children: [
-          Container(
-            color: const Color.fromRGBO(245, 245, 244, 0.8),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Image.asset(
-                    "images/4.PNG",
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 470,
-            ),
-            child: Container(
-              decoration: const BoxDecoration(
-                  color: Color.fromRGBO(38, 77, 102, 1),
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30))),
-              // height: 300,
+    return SafeArea(
+      child: Scaffold(
+        body: Stack(
+          children: [
+            Container(
+              color: const Color.fromRGBO(245, 245, 244, 0.8),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.only(top: 25.0),
-                    child: Text(
-                      "Pay for just the seat",
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Color.fromRGBO(245, 245, 244, 1),
-                          fontWeight: FontWeight.w600),
-                    ),
-                  ),
-                  const Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 15.0, vertical: 15),
-                    child: Center(
-                      child: Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien suspendisse gravida miullamcorper. Tellus nunc in id cursus viverra",
-                        style: TextStyle(
-                            fontSize: 15,
-                            color: Color.fromRGBO(245, 245, 244, 1)),
-                        textAlign: TextAlign.center,
-                        softWrap: true,
-                      ),
-                    ),
-                  ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 150.0),
-                    child: Row(
-                      children: [
-                        UiHelper.light_swip_container(
-                            10, 8, const Color.fromRGBO(216, 168, 82, 0.4)),
-                        const SizedBox(width: 8),
-                        UiHelper.light_swip_container(
-                            10, 8, const Color.fromRGBO(216, 168, 82, 0.4)),
-                        const SizedBox(width: 8),
-                        UiHelper.light_swip_container(
-                          50,
-                          8,
-                          const Color.fromRGBO(241, 163, 74, 1),
-                        ),
-                      ],
+                    padding: const EdgeInsets.only(bottom: 130.0),
+                    child: Image.asset(
+                      "images/4.PNG",
                     ),
                   ),
-                  const SizedBox(height: 30),
-                  UiHelper.AppButtons(() {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const LoginScreen()));
-                  }, "Login")
                 ],
               ),
             ),
-          )
-        ],
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 470,
+              ),
+              child: Container(
+                decoration: const BoxDecoration(
+                    color: Color.fromRGBO(38, 77, 102, 1),
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30))),
+                // height: 300,
+                child: Column(
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.only(top: 25.0),
+                      child: Text(
+                        "Pay for just the seat",
+                        style: TextStyle(
+                            fontSize: 20,
+                            color: Color.fromRGBO(245, 245, 244, 1),
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    const Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 15.0, vertical: 15),
+                      child: Center(
+                        child: Text(
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien suspendisse gravida miullamcorper. Tellus nunc in id cursus viverra",
+                          style: TextStyle(
+                              fontSize: 15,
+                              color: Color.fromRGBO(245, 245, 244, 1)),
+                          textAlign: TextAlign.center,
+                          softWrap: true,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 150.0),
+                      child: Row(
+                        children: [
+                          UiHelper.light_swip_container(
+                              10, 8, const Color.fromRGBO(216, 168, 82, 0.4)),
+                          const SizedBox(width: 8),
+                          UiHelper.light_swip_container(
+                              10, 8, const Color.fromRGBO(216, 168, 82, 0.4)),
+                          const SizedBox(width: 8),
+                          UiHelper.light_swip_container(
+                            50,
+                            8,
+                            const Color.fromRGBO(241, 163, 74, 1),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 30),
+                    UiHelper.AppButtons(() {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LoginScreen()));
+                    }, "Login")
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

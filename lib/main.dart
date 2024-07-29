@@ -18,7 +18,11 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   void initState() {
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+    // SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Color.fromRGBO(38, 77, 102, 1),
+    ));
     super.initState();
   }
 

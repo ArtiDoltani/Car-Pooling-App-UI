@@ -41,7 +41,7 @@ class UiHelper {
     double? height = 50,
     double? width = 350,
     Color? txtcolor = const Color.fromRGBO(255, 255, 255, 1),
-    Color? bgcolor = const Color.fromRGBO(241, 163, 74, 1),
+    Color? bgcolor = const Color.fromRGBO(224, 170, 79, 1),
   ]) {
     return InkWell(
       onTap: voidCallback,
@@ -59,6 +59,36 @@ class UiHelper {
                       color: txtcolor))),
         ),
       ),
+    );
+  }
+
+  // Custom input textfield
+  static customTextField(String hinttext, [IconData? icon]) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
+      child: SizedBox(
+          width: 385,
+          height: 45,
+          child: TextField(
+            decoration: InputDecoration(
+              filled: true,
+              hintText: hinttext,
+              prefixIcon: Icon(icon),
+              prefixIconColor: Colors.black38,
+              fillColor: const Color.fromRGBO(255, 255, 255, 1),
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide.none),
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 14.0),
+              hintStyle: GoogleFonts.inter(
+                textStyle: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+          )),
     );
   }
 }
