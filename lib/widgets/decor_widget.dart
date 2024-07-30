@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class UiHelper {
   static Color color = const Color.fromRGBO(255, 255, 255, 1);
+  static Color appColor = const Color.fromRGBO(38, 77, 102, 1);
   static timing_row() {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,

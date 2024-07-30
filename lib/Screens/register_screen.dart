@@ -1,3 +1,4 @@
+import 'package:car_pooling_and_ride_sharing_app/Screens/otp_screen.dart';
 import 'package:car_pooling_and_ride_sharing_app/widgets/decor_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -8,13 +9,13 @@ class RegisterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.grey.shade300,
+        backgroundColor: Colors.grey.shade200,
         body: SingleChildScrollView(
           child: Column(
             children: [
               Container(
                 // height: 370,
-                color: const Color.fromRGBO(38, 77, 102, 1),
+                color: UiHelper.appColor,
                 child: Column(
                   //    mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
