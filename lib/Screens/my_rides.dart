@@ -1,8 +1,6 @@
 import 'package:car_pooling_and_ride_sharing_app/models/myrides.dart';
 import 'package:car_pooling_and_ride_sharing_app/widgets/decor_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class MyRides extends StatelessWidget {
   const MyRides({super.key});
@@ -34,12 +32,8 @@ class MyRides extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8),
                         child: Image.asset(
                           rides[index].img,
-                          // fit: BoxFit.cover,
                         ),
                       ),
-                      // SizedBox(
-                      //   width: 10,
-                      // ),
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.only(top: 10.0, left: 8),
@@ -114,7 +108,6 @@ class MyRides extends StatelessWidget {
                                   )),
                                 ],
                               ),
-                              // Text(". \n.")
                             ],
                           ),
                         ),
