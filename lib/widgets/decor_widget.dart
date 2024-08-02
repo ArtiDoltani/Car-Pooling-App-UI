@@ -4,6 +4,13 @@ import 'package:google_fonts/google_fonts.dart';
 class UiHelper {
   static Color color = const Color.fromRGBO(255, 255, 255, 1);
   static Color appColor = const Color.fromRGBO(38, 77, 102, 1);
+  static var styleFrom = ElevatedButton.styleFrom(
+    backgroundColor: UiHelper.color,
+    surfaceTintColor: Colors.white,
+    shape: RoundedRectangleBorder(
+        side: BorderSide(color: Colors.black.withOpacity(0.1)),
+        borderRadius: BorderRadius.circular(8)),
+  );
   static timing_row() {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
