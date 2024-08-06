@@ -12,7 +12,7 @@ class Botm_nav_Screen extends StatefulWidget {
 
 class _Botm_nav_ScreenState extends State<Botm_nav_Screen> {
   int currentIndex = 0;
-  final tabs = [HomeScreen(), MyRides(), HomeScreen(), Text("Profile")];
+  final tabs = [HomeScreen(), MyRides(), HomeScreen(), ProfileScreen()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
