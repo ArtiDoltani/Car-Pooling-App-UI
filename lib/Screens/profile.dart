@@ -100,6 +100,7 @@ class ProfileScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 final isLogout = itemList[index] == "Logout";
                 return ListTile(
+                  tileColor: UiHelper.color,
                   contentPadding: const EdgeInsets.symmetric(
                       vertical: 8.0, horizontal: 16.0),
                   leading: Icon(

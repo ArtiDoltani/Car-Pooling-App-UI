@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'dart:typed_data';
-
 import 'package:car_pooling_and_ride_sharing_app/widgets/decor_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -17,12 +16,10 @@ class _EditProfileState extends State<EditProfile> {
   List subTitle = ["Johnwilson", "john@mail.com", "+91 1234567890"];
   Uint8List? _image;
   File? selectedImage;
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color.fromRGBO(244, 244, 244, 1.0),
         appBar: UiHelper.CustomAppBar("Edit profile", () {
           Navigator.pop(context);
         }),
@@ -47,7 +44,7 @@ class _EditProfileState extends State<EditProfile> {
                               backgroundImage: AssetImage("images/profile.png"),
                             ),
                       Positioned(
-                        bottom: -10,
+                        bottom: -0,
                         left: 60,
                         child: IconButton(
                           onPressed: () {

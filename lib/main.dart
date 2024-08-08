@@ -2,6 +2,7 @@ import 'package:car_pooling_and_ride_sharing_app/Screens/firstScreen.dart';
 import 'package:car_pooling_and_ride_sharing_app/Screens/fourthScreen.dart';
 import 'package:car_pooling_and_ride_sharing_app/Screens/secondScreen.dart';
 import 'package:car_pooling_and_ride_sharing_app/Screens/thirdScreen.dart';
+import 'package:car_pooling_and_ride_sharing_app/widgets/decor_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -17,12 +18,12 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  @override
   void initState() {
     // SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
 
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Color.fromRGBO(38, 77, 102, 1),
-    ));
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: UiHelper.appColor));
     super.initState();
   }
 
@@ -35,6 +36,7 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(
           primarySwatch: Colors.orange,
           useMaterial3: true,
+          scaffoldBackgroundColor: Color.fromRGBO(244, 244, 244, 1.0),
         ),
         home: PageView(
           children: const [

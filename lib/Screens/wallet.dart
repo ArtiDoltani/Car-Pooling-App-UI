@@ -1,3 +1,6 @@
+import 'package:car_pooling_and_ride_sharing_app/Screens/add_money.dart';
+import 'package:car_pooling_and_ride_sharing_app/Screens/send_to_bank.dart';
+import 'package:car_pooling_and_ride_sharing_app/Screens/transaction.dart';
 import 'package:car_pooling_and_ride_sharing_app/widgets/decor_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -17,10 +20,7 @@ class WalletScreen extends StatelessWidget {
       Icons.account_balance_wallet_outlined,
       Icons.add_business,
     ];
-    // List VoidCallback = [
-    //   TransactionScreen(),
-    //   AddMoney(), SendToBank()
-    // ];
+    List VoidCallback = [TransactionScreen(), AddMoney(), SendToBank()];
     return SafeArea(
         child: Scaffold(
       backgroundColor: const Color.fromRGBO(218, 213, 209, 0.4),
@@ -104,7 +104,11 @@ class WalletScreen extends StatelessWidget {
                                   size: 17,
                                 ),
                                 onTap: () {
-                                  //Navigator.push(context, MaterialPageRoute(builder: (context) =>));
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              VoidCallback[index]));
                                 },
                               ),
                             ),
