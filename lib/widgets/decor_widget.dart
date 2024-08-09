@@ -12,6 +12,10 @@ class UiHelper {
         side: BorderSide(color: Colors.black.withOpacity(0.1)),
         borderRadius: BorderRadius.circular(8)),
   );
+  static TextStyle vehicleTitleStyle = const TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.bold,
+  );
   static timing_row() {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,7 +83,7 @@ class UiHelper {
       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
       child: SizedBox(
         width: 385,
-        height: 45,
+        height: 50,
         child: TextField(
           decoration: InputDecoration(
             filled: true,
