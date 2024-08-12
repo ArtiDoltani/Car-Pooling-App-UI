@@ -16,6 +16,16 @@ class UiHelper {
     fontSize: 15,
     fontWeight: FontWeight.bold,
   );
+
+  // Custom box decoration
+  static BoxDecoration customBoxDecoration() {
+    return BoxDecoration(
+        borderRadius: BorderRadius.circular(8.0),
+        color: UiHelper.color,
+        border: Border.all(width: 1, color: Colors.black.withOpacity(0.1)));
+  }
+
+  // Custom Row
   static timing_row() {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -114,15 +124,53 @@ class UiHelper {
     );
   }
 
-  static CustomAppBar(String app_title, VoidCallback callback) {
+  static CustomAppBar(String appTitle, VoidCallback callback) {
     return AppBar(
+      leadingWidth: 30,
       backgroundColor: appColor,
       foregroundColor: color,
-      leading: IconButton(
-        onPressed: callback,
-        icon: Icon(Icons.arrow_back_ios, color: UiHelper.color, size: 16),
+      leading: Padding(
+        padding: const EdgeInsets.only(left: 10.0),
+        child: IconButton(
+          onPressed: callback,
+          icon: Icon(Icons.arrow_back_ios, color: UiHelper.color, size: 16),
+        ),
       ),
-      title: Text(app_title),
+      title: Text(appTitle),
+    );
+  }
+
+  // custom divider
+  static customverticalDivider() {
+    return const VerticalDivider(
+      indent: 10,
+      endIndent: 10,
+      color: Colors.grey,
+      thickness: 1,
+    );
+  }
+
+  //
+
+  static passengerSeat(String img, String name) {
+    return Expanded(
+      child: Column(
+        children: [
+          CircleAvatar(
+            radius: 25,
+            backgroundImage: AssetImage(img),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Text(
+            name,
+            style: const TextStyle(fontWeight: FontWeight.w400),
+            softWrap: true,
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
     );
   }
 }
