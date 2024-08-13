@@ -1,4 +1,11 @@
+import 'package:car_pooling_and_ride_sharing_app/Screens/customer_support.dart';
 import 'package:car_pooling_and_ride_sharing_app/Screens/edit_profile.dart';
+import 'package:car_pooling_and_ride_sharing_app/Screens/faqs_screen.dart';
+import 'package:car_pooling_and_ride_sharing_app/Screens/login.dart';
+import 'package:car_pooling_and_ride_sharing_app/Screens/my_vehicle.dart';
+import 'package:car_pooling_and_ride_sharing_app/Screens/privacy_pol.dart';
+import 'package:car_pooling_and_ride_sharing_app/Screens/rides_history.dart';
+import 'package:car_pooling_and_ride_sharing_app/Screens/terms_cond.dart';
 import 'package:car_pooling_and_ride_sharing_app/widgets/decor_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -18,8 +25,8 @@ class ProfileScreen extends StatelessWidget {
     ];
 
     List<String> subTtitle = [
-      "See your ride history",
       "Add vehicle information",
+      "See your ride history",
       "Know our terms and condition",
       "Know our policy",
       "Get your question answer",
@@ -36,6 +43,54 @@ class ProfileScreen extends StatelessWidget {
       Icons.headphones,
       Icons.logout
     ];
+    List profileFunctions = [
+      const MyVehicle(),
+      const RidesHistory(),
+      const TermsAndConditions(),
+      const PrivacyPolicy(),
+      const FAQsScreen(),
+      const CustomerSupport(),
+    ];
+    void _showLogoutDialog(BuildContext context) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12.0),
+            ),
+            backgroundColor: const Color.fromRGBO(254, 254, 254, 1.0),
+            contentTextStyle: Theme.of(context).textTheme.titleMedium,
+            content: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.0),
+              child: Text(
+                "Are you sure you want to logout this account?",
+                textAlign: TextAlign.center,
+              ),
+            ),
+            actions: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  UiHelper.AppButtons(() {
+                    Navigator.pop(context);
+                  }, "Cancel", 40, 110),
+                  UiHelper.AppButtons(() {
+                    Navigator.of(context).pop();
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginScreen(),
+                      ),
+                    );
+                  }, "Logout", 40, 110),
+                ],
+              )
+            ],
+          );
+        },
+      );
+    }
 
     return Scaffold(
       appBar: AppBar(
@@ -99,33 +154,47 @@ class ProfileScreen extends StatelessWidget {
               ),
               itemBuilder: (context, index) {
                 final isLogout = itemList[index] == "Logout";
-                return ListTile(
-                  tileColor: UiHelper.color,
-                  contentPadding: const EdgeInsets.symmetric(
-                      vertical: 8.0, horizontal: 16.0),
-                  leading: Icon(
-                    iconList[index],
-                    color: isLogout ? Colors.red : null,
-                  ),
-                  title: Text(
-                    itemList[index],
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+                return InkWell(
+                  onTap: () {
+                    if (isLogout) {
+                      _showLogoutDialog(context);
+                    } else {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => profileFunctions[index],
+                        ),
+                      );
+                    }
+                  },
+                  child: ListTile(
+                    tileColor: UiHelper.color,
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 8.0, horizontal: 16.0),
+                    leading: Icon(
+                      iconList[index],
                       color: isLogout ? Colors.red : null,
                     ),
-                  ),
-                  subtitle: isLogout
-                      ? null
-                      : Text(
-                          subTtitle[index],
-                          style: const TextStyle(
-                            fontSize: 13,
+                    title: Text(
+                      itemList[index],
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: isLogout ? Colors.red : null,
+                      ),
+                    ),
+                    subtitle: isLogout
+                        ? null
+                        : Text(
+                            subTtitle[index],
+                            style: const TextStyle(
+                              fontSize: 13,
+                            ),
                           ),
-                        ),
-                  trailing: const Icon(
-                    Icons.arrow_forward_ios,
-                    size: 15,
+                    trailing: const Icon(
+                      Icons.arrow_forward_ios,
+                      size: 15,
+                    ),
                   ),
                 );
               },

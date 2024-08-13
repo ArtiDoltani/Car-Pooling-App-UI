@@ -16,7 +16,6 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color.fromRGBO(246, 246, 246, 0.9),
         body: SingleChildScrollView(
           child: Column(
             children: [
