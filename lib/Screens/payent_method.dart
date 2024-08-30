@@ -1,4 +1,4 @@
-import 'package:car_pooling_and_ride_sharing_app/Screens/money_added.dart';
+import 'package:car_pooling_and_ride_sharing_app/Screens/credit_card.dart';
 import 'package:car_pooling_and_ride_sharing_app/widgets/decor_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -57,7 +57,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
           ),
           UiHelper.AppButtons(() {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const MoneyAdded()));
+                MaterialPageRoute(builder: (context) => const CreditCard()));
           }, "Add amount (\$50.00)")
         ],
       ),
