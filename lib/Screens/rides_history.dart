@@ -16,7 +16,8 @@ class _RidesHistoryState extends State<RidesHistory> {
       appBar: UiHelper.CustomAppBar("Ride history", () {
         Navigator.pop(context);
       }),
-       body: ListView.builder(
+       body: 
+ Expanded(     child:ListView.builder(
           itemCount: rides.length,
           itemBuilder: (context, index) {
             return Padding(
@@ -130,6 +131,6 @@ class _RidesHistoryState extends State<RidesHistory> {
             );
           }),
 
-    );
+   ) );
   }
 }
