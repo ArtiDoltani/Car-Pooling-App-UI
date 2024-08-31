@@ -1,5 +1,7 @@
 import 'package:car_pooling_and_ride_sharing_app/widgets/decor_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:car_pooling_and_ride_sharing_app/Screens/confirm_screen.dart';
+
 
 class OfferRide extends StatefulWidget {
   const OfferRide({Key? key}) : super(key: key);
@@ -155,7 +157,13 @@ class _OfferRideState extends State<OfferRide> {
                   horizontal: 20.0,
                   vertical: 10,
                 ),
-                child: UiHelper.AppButtons(() {}, "Continue"))
+                child: UiHelper.AppButtons(() {
+                   Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ConfirmedScreen()));
+
+                }, "Continue"))
           ],
         ),
       ),
