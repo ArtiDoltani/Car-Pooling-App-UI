@@ -1,5 +1,8 @@
 import 'package:car_pooling_and_ride_sharing_app/models/myrides.dart';
 import 'package:car_pooling_and_ride_sharing_app/widgets/decor_widget.dart';
+import 'package:car_pooling_and_ride_sharing_app/Screens/review.dart';
+import 'package:car_pooling_and_ride_sharing_app/Screens/map_view.dart';
+
 import 'package:flutter/material.dart';
 
 class MyRidesDetail extends StatelessWidget {
@@ -143,7 +146,13 @@ class RideDetail extends StatelessWidget {
                             color: UiHelper.orangeColor,
                             fontWeight: FontWeight.w500)),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                          Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MapVeiw()));
+
+                      },
                       child: Text("Map view",
                           style: TextStyle(
                               fontSize: 16,
@@ -319,7 +328,11 @@ class RideDetail extends StatelessWidget {
                                   color: UiHelper.orangeColor,
                                   fontWeight: FontWeight.w500)),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ReviewScreen()));
+},
                             child: Text("View all",
                                 style: TextStyle(
                                     fontSize: 16,
